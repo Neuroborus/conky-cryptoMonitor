@@ -1,5 +1,6 @@
 # conky-cryptoWidget
 This conky theme displays real-time prices of Bitcoin (BTC), Ethereum (ETH), Avalanche (AVAX), Terra (LUNA), Solana (SOL), TraderJoe (JOE) using the [Coingecko-api](https://www.coingecko.com/en/api/documentation).
+
 ![](Screenshot.png)
 
 ## Dependencies
