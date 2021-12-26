@@ -16,6 +16,20 @@ sudo apt install conky-all
 ./install
 ```
 
+## Change/Add some coins
+1. Go to [Coingecko-api docs](https://www.coingecko.com/en/api/documentation) and open the query "GET /simple/price";
+2. Press "Try it out" and fill "ids" field with ids of the coins you want (you can find the ids on the specific coin page on [Coingecko](https://www.coingecko.com/en));
+3. On "vs_currencies" field put "usd" (and "btc" if you're interested on btc pairs);
+4. Modify other fields as you want and press "Execute";
+5. Copy the curl string and paste it on the template file (row 56);
+6. Then you'll need the image: search it online and make it white please or you'll ruin the minimal feel :(
+7. Copy and paste this, then modify img path, positioning, offset, voffset and jq command:
+```
+${image ~/conky-cryptoWidget/img/btc-white.png -p 20,75 -s 50x50}${voffset 120}\
+${font Ubuntu Regular:size=12}${offset 8}${execi 0 echo "scale=2; $(cat ~/conky-cryptoWidget/prices.json | jq -r .bitcoin.usd)/1" | bc}\
+```
+8. Enjoy :)
+
 ## Tests
 This code/script has been tested on ubuntu 21.10
 
@@ -24,7 +38,4 @@ This code/script has been tested on ubuntu 21.10
 
 ## Contributing
 If you have any improvement's suggestions, please contact me or contribute to the repo.
-
-## Acknowledgments
-Icons are made by me. If you want to add other coins, search for svg logos online, then remove unnecessary things and put everything on white!
 
