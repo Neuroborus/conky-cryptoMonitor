@@ -1,4 +1,4 @@
-# conky-cryptoTrio
+# conky-cryptoWidget
 This conky theme displays real-time prices of Bitcoin (BTc), Ethereum (ETH), Litecoin (LTC) using the [Coinbase-api](https://developers.coinbase.com/).
 
 
@@ -17,22 +17,14 @@ sudo apt install conky-all
 ```
 
 ## Tests
-This code/script has been tested on ubuntu 17.10
+This code/script has been tested on ubuntu 21.10
 
-## Screenshots
+## Screenshot
 ![](Screenshot.png)
 
 ## Contributing
-If you have any improvement's suggestions, please contact me.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+If you have any improvement's suggestions, please contact me or contribute to the repo.
 
 ## Acknowledgments
-This project was inspired by the following:
-* [google-now-themed-conky-for-ubuntu-desktop](http://www.omgubuntu.co.uk/2013/05/google-now-themed-conky-for-ubuntu-desktop)
-* [conky-finance](https://github.com/alseambusher/conky-finance)
-* [Coinbase](https://developers.coinbase.com/)
-
-The icons used are from [Cryptocurrency Icons](https://dribbble.com/shots/3513187-Cryptocurrency-Icons), by [Christopher Downer](https://dribbble.com/cjdowner)
+Icons are made by me. If you want to add other coins, search for svg logos online, then remove unnecessary things and put everything on white!
 
