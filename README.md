@@ -1,6 +1,6 @@
 # conky-cryptoWidget
 This conky theme displays real-time prices of Bitcoin (BTC), Ethereum (ETH), Avalanche (AVAX), Terra (LUNA), Solana (SOL), TraderJoe (JOE) using the [Coingecko-api](https://www.coingecko.com/en/api/documentation).
-
+![](Screenshot.png)
 
 ## Dependencies
 This script require the follwing modules/libraries: 
@@ -28,13 +28,10 @@ sudo apt install conky-all
 ${image ~/conky-cryptoWidget/img/btc-white.png -p 20,75 -s 50x50}${voffset 120}\
 ${font Ubuntu Regular:size=12}${offset 8}${execi 0 echo "scale=2; $(cat ~/conky-cryptoWidget/prices.json | jq -r .bitcoin.usd)/1" | bc}\
 ```
-8. Enjoy :)
+8. Reinstall the widget and enjoy :)
 
 ## Tests
 This code/script has been tested on ubuntu 21.10
-
-## Screenshot
-![](Screenshot.png)
 
 ## Contributing
 If you have any improvement's suggestions, please contact me or contribute to the repo.
