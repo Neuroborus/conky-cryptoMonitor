@@ -65,11 +65,11 @@ ${image ~/conky-cryptoMonitor/img/sol-white.png -p 216,75 -s 50x50}${voffset 0}\
 ${font Ubuntu Regular:size=12}${offset 35}${alignc}${execi 0 echo "scale=2; $(cat ~/conky-cryptoMonitor/prices.json | jq -r .solana.usd)/1" | bc}\
 \
 ${image ~/conky-cryptoMonitor/img/cardano-white.png -p 314,75 -s 50x50}${voffset 0}\
-${font Ubuntu Regular:size=12}${offset 54}${alignc}${execi 0 echo "scale=2; $(cat ~/conky-cryptoMonitor/prices.json | jq -r .cardano.usd)/1" | bc}\
+${font Ubuntu Regular:size=12}${offset 48}${alignc}${execi 0 echo "scale=4; $(cat ~/conky-cryptoMonitor/prices.json | jq -r .cardano.usd)/1" | bc}\
 \
 ${image ~/conky-cryptoMonitor/img/grt-white.png -p 412,75 -s 50x50}${voffset 0}\
-${font Ubuntu Regular:size=12}${offset 74}${alignc}${execi 0 echo "scale=2; $(cat ~/conky-cryptoMonitor/prices.json | jq -r .\"the-graph\".usd)/1" | bc}\
+${font Ubuntu Regular:size=12}${offset 54}${alignc}${execi 0 echo "scale=4; $(cat ~/conky-cryptoMonitor/prices.json | jq -r .\"the-graph\".usd)/1" | bc}\
 \
 ${image ~/conky-cryptoMonitor/img/near-white.png -p 510,75 -s 50x50}${voffset 0}\
-${font Ubuntu Regular:size=12}${offset 70}${alignc}${execi 0 echo "scale=2; $(cat ~/conky-cryptoMonitor/prices.json | jq -r .near.usd)/1" | bc}\
+${font Ubuntu Regular:size=12}${offset 52}${alignc}${execi 0 echo "scale=3; $(cat ~/conky-cryptoMonitor/prices.json | jq -r .near.usd)/1" | bc}\
 ]];
