@@ -1,5 +1,5 @@
 conky.config = {
--- Watchlist for BTC, ETH, SOL
+-- Watchlist for BTC, ETH, SOL, GRT, ADA, NEAR
 
 -- Conky settings #
 	background = false,
