@@ -1,5 +1,5 @@
 conky.config = {
--- Watchlist for BTC, ETH, AVAX, LUNA, SOL, JOE
+-- Watchlist for BTC, ETH, SOL
 
 -- Conky settings #
 	background = false,
@@ -15,12 +15,12 @@ conky.config = {
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 
 	minimum_width = 50,
-	maximum_width = 300,
+	maximum_width = 600,
 
 -- Alignment #
-	alignment = 'top_right',
-	gap_x = 70,
-	gap_y = 100,
+	alignment = 'bottom_left',
+	gap_x = 0,
+	gap_y = 0,
 
 	border_inner_margin = 15,
 	border_outer_margin = 0,
@@ -53,23 +53,23 @@ conky.config = {
 
 conky.text = [[
 
-${execi 300  curl -X 'GET' 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cavalanche-2%2Cterra-luna%2Csolana%2Cjoe&vs_currencies=usd%2Cbtc' -H 'accept: application/json' -o ~/conky-cryptoWidget/prices.json}\
+${execi 300  curl -X 'GET' 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Csolana%2Ccardano%2Cnear%2Cthe-graph%2C&vs_currencies=usd' -H 'accept: application/json' -o ~/conky-cryptoMonitor/prices.json}\
 \
-${image ~/conky-cryptoWidget/img/btc-white.png -p 20,75 -s 50x50}${voffset 120}\
-${font Ubuntu Regular:size=12}${offset 8}${execi 0 echo "scale=2; $(cat ~/conky-cryptoWidget/prices.json | jq -r .bitcoin.usd)/1" | bc}\
+${image ~/conky-cryptoMonitor/img/btc-white.png -p 20,75 -s 50x50}${voffset 120}\
+${font Ubuntu Regular:size=12}${offset 8}${execi 0 echo "scale=2; $(cat ~/conky-cryptoMonitor/prices.json | jq -r .bitcoin.usd)/1" | bc}\
 \
-${image ~/conky-cryptoWidget/img/eth-white.png -p 118,75 -s 50x50}${voffset 0}\
-${font Ubuntu Regular:size=12}${offset 30}${execi 0 echo "scale=2; $(cat ~/conky-cryptoWidget/prices.json | jq -r .ethereum.usd)/1" | bc}\
+${image ~/conky-cryptoMonitor/img/eth-white.png -p 118,75 -s 50x50}${voffset 0}\
+${font Ubuntu Regular:size=12}${offset 30}${execi 0 echo "scale=2; $(cat ~/conky-cryptoMonitor/prices.json | jq -r .ethereum.usd)/1" | bc}\
 \
-${image ~/conky-cryptoWidget/img/avax-white.png -p 216,75 -s 50x50}${voffset 0}\
-${font Ubuntu Regular:size=12}${offset 35}${execi 0 echo "scale=2; $(cat ~/conky-cryptoWidget/prices.json | jq -r '."avalanche-2".usd')/1" | bc}\
+${image ~/conky-cryptoMonitor/img/sol-white.png -p 216,75 -s 50x50}${voffset 0}\
+${font Ubuntu Regular:size=12}${offset 35}${alignc}${execi 0 echo "scale=2; $(cat ~/conky-cryptoMonitor/prices.json | jq -r .solana.usd)/1" | bc}\
 \
-${image ~/conky-cryptoWidget/img/luna-white.png -p 20,210 -s 50x50}${voffset 80}\
-${font Ubuntu Regular:size=12}${offset -245}${voffset 53}${alignc 77}${execi 0 echo "scale=2; $(cat ~/conky-cryptoWidget/prices.json | jq -r '."terra-luna".usd')/1" | bc}\
+${image ~/conky-cryptoMonitor/img/cardano-white.png -p 314,75 -s 50x50}${voffset 0}\
+${font Ubuntu Regular:size=12}${offset 54}${alignc}${execi 0 echo "scale=2; $(cat ~/conky-cryptoMonitor/prices.json | jq -r .cardano.usd)/1" | bc}\
 \
-${image ~/conky-cryptoWidget/img/sol-white.png -p 118,210 -s 50x50}${voffset 0}\
-${font Ubuntu Regular:size=12}${offset 47}${alignc}${execi 0 echo "scale=2; $(cat ~/conky-cryptoWidget/prices.json | jq -r .solana.usd)/1" | bc}\
+${image ~/conky-cryptoMonitor/img/grt-white.png -p 412,75 -s 50x50}${voffset 0}\
+${font Ubuntu Regular:size=12}${offset 74}${alignc}${execi 0 echo "scale=2; $(cat ~/conky-cryptoMonitor/prices.json | jq -r .\"the-graph\".usd)/1" | bc}\
 \
-${image ~/conky-cryptoWidget/img/joe-white.png -p 216,210 -s 50x50}${voffset 0}\
-${font Ubuntu Regular:size=12}${offset 53}${alignc -77}${execi 0 echo "scale=2; $(cat ~/conky-cryptoWidget/prices.json | jq -r .joe.usd)/1" | bc}\
+${image ~/conky-cryptoMonitor/img/near-white.png -p 510,75 -s 50x50}${voffset 0}\
+${font Ubuntu Regular:size=12}${offset 70}${alignc}${execi 0 echo "scale=2; $(cat ~/conky-cryptoMonitor/prices.json | jq -r .near.usd)/1" | bc}\
 ]];

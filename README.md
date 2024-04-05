@@ -1,14 +1,15 @@
-# conky-cryptoWidget
-This conky theme displays real-time prices of Bitcoin (BTC), Ethereum (ETH), Avalanche (AVAX), Terra (LUNA), Solana (SOL), TraderJoe (JOE) using the [Coingecko-api](https://www.coingecko.com/en/api/documentation).
+# conky-cryptoMonitor
+This conky theme displays real-time prices of Bitcoin, Ethereum, Cardano, Near, Solana, Graph
+TraderJoe (JOE) using the [Coingecko-api](https://www.coingecko.com/en/api/documentation).
 
 ![](Screenshot.png)
 
 ## Dependencies
 This script require the follwing modules/libraries: 
-* Conky module; which can be installed using:
-```
-sudo apt install conky-all
-```
+* Conky module; which can be installed using: </br>
+`sudo apt install conky-all`
+* jq: </br>
+`sudo apt install jq`
 
 ## Installation
 1. Dowload the project and extract it to your home folder.
@@ -26,14 +27,11 @@ sudo apt install conky-all
 6. Then you'll need the image: search it online and make it white please or you'll ruin the minimal feel :(
 7. Copy and paste this, then modify img path, positioning, offset, voffset and jq command:
 ```
-${image ~/conky-cryptoWidget/img/btc-white.png -p 20,75 -s 50x50}${voffset 120}\
-${font Ubuntu Regular:size=12}${offset 8}${execi 0 echo "scale=2; $(cat ~/conky-cryptoWidget/prices.json | jq -r .bitcoin.usd)/1" | bc}\
+${image ~/conky-cryptoMonitor/img/btc-white.png -p 20,75 -s 50x50}${voffset 120}\
+${font Ubuntu Regular:size=12}${offset 8}${execi 0 echo "scale=2; $(cat ~/conky-cryptoMonitor/prices.json | jq -r .bitcoin.usd)/1" | bc}\
 ```
 8. Reinstall the widget and enjoy :)
 
 ## Tests
-This code/script has been tested on ubuntu 21.10
-
-## Contributing
-If you have any improvement's suggestions, please contact me or contribute to the repo.
+This code/script has been tested on Ubuntu 22
 
